@@ -1,0 +1,810 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+            body {
+                background-color: #262626;
+                margin: 0;
+                overflow-x: hidden;
+                text-align: center;
+                font-family: Consolas, sans-serif;
+                color: #D7D7D7;
+            }
+            hr {
+                border: 0;
+                box-shadow: 0 0 0 1px rgba(131, 131, 128, .75);
+            }
+            td {
+                width: 50vw;
+            }
+            a {
+                color: #4D8B4C;
+            }
+            a:hover {
+                color: #46A648;
+            }
+            a:active {
+                color: #41b843;
+            }
+            img {
+                border: 1px solid #838380;
+            }
+            #container {
+                width: 100vw;
+                height: 100vh;
+                display: grid;
+                display: -ms-grid;
+                grid-template-columns: 100vw;
+                grid-template-rows: max-content max-content max-content max-content max-content max-content max-content max-content;
+            }
+            #overview {
+                grid-row: 1;
+            }
+            #color {
+                grid-row: 2;
+            }
+            #formats {
+                grid-row: 3;
+            }
+            #size {
+                grid-row: 4;
+            }
+            #presets {
+                grid-row: 5;
+            }
+            #settings {
+                grid-row: 6;
+            }
+            #settings > img {
+                width: 10%;
+            }
+            #settings > img:hover {
+                width: max-content;
+            }
+            #usefull {
+                grid-row: 7;
+            }
+            #footer {
+                grid-row: 8;
+            }
+            .nthTableBorder tr:nth-child(n+2) > td {
+                border: 1px solid rgba(131, 131, 128, .2);
+                background: rgba(50, 50, 50, .5);
+            }
+            .tableBorder tr > th, .tableBorder tr > td {
+                border: 1px solid rgba(131, 131, 128, .2);
+                background: rgba(50, 50, 50, .5);
+            }
+            .imageBorder > img:hover {
+                cursor: pointer;
+                border: 1px solid #a3a3a0;
+                -webkit-transition: border .025s ease-in-out;
+                -moz-transition: border .025s ease-in-out;
+                -o-transition: border .025s ease-in-out;
+                transition: border .025s ease-in-out;
+            }
+            .imageBorder > img:active {
+                border: 1px solid #c4c4c0;
+                -webkit-transition: border .025s ease-in-out;
+                -moz-transition: border .025s ease-in-out;
+                -o-transition: border .025s ease-in-out;
+                transition: border .025s ease-in-out;
+            }
+            .hoverEffect {
+                color:#D7D7D7;
+            }
+            .hoverEffect:hover {
+                cursor: pointer;
+                color: #ebebeb;
+                -webkit-transition: border .025s ease-in-out;
+                -moz-transition: border .025s ease-in-out;
+                -o-transition: border .025s ease-in-out;
+                transition: border .025s ease-in-out;
+            }
+            .hoverEffect:active {
+                color: #ffffff;
+                -webkit-transition: border .025s ease-in-out;
+                -moz-transition: border .025s ease-in-out;
+                -o-transition: border .025s ease-in-out;
+                transition: border .025s ease-in-out;
+            }
+            .toggleImage {
+                height: 0vh;
+                opacity: 0;
+                -webkit-transition: opacity .125s ease-in-out;
+                -moz-transition: opacity .125s ease-in-out;
+                -o-transition: opacity .125s ease-in-out;
+                transition: opacity .125s ease-in-out;
+            }
+            .toggleImage img {
+                height: 0%;
+                border: 1px solid #838380;
+                -webkit-transition: .125s ease-in-out;
+                -moz-transition: .125s ease-in-out;
+                -o-transition: .125s ease-in-out;
+                transition: .125s ease-in-out;
+            }
+            .toggleImage:target {
+                height: max-content;
+                opacity: 1;
+            }
+            .underline {
+                border-bottom: 1px solid #D7D7D7;
+            }
+            .keyword {
+                color: #6C95EB;
+            }
+            .class {
+                color: #4EC9B0;
+            }
+            .struct {
+                color: #80B780;
+            }
+            .interface {
+                color: #B7D680;
+            }
+            .enum {
+                color: #B8D7A3;
+            }
+            .method {
+                color: #DBDCAA;
+            }
+            .parameter {
+                color: #8FD2F8;
+            }
+            .string {
+                color: #D59C7C;
+            }
+            .digit {
+                color: #B5CEA8;
+            }
+            .warning {
+                color: #ff6a00;
+            }
+            .error {
+                color: #ec1313;
+            }
+            .scriptableObject {
+                color: #7FD6FD;
+            }
+        </style>
+        <script type="text/javascript">
+            function Copy(_String, _LongString = false) {
+
+                const _TEXT_AREA = document.createElement('textarea');
+                const _COPY = document.getElementById('copy');
+
+                if (_LongString) {
+                    for (let i = 0; i < 3000; i++) {
+                        _String += "Lorem ipsum ";
+                    }
+                    _String += "\");";
+                }
+
+                _TEXT_AREA.innerHTML = _String
+                _COPY.appendChild(_TEXT_AREA);
+                _TEXT_AREA.select();
+
+                document.execCommand('copy');
+
+                _COPY.removeChild(_TEXT_AREA);
+            }    
+        </script>
+        <meta charset="utf-8">
+        <title>SimpleDebugFormatting</title>
+        <meta name="description" content="Instructions for the Simple Debug Formatting Plugin for Unity.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:title" content="Simple Debug Formatting">
+        <meta property="og:description" content="Instructions for the DebugLogFormatting Plugin for Unity.">
+        <meta property="og:type" content="Instructions">
+        <meta name="theme-color" content="#262626">
+        <link rel="icon" type="image/png" sizes="310x310" href="Images/Logo.png">
+    </head>
+    <body>
+        <div id="copy" style="height: 0%;"></div>
+        <div id="container">
+            <div id="overview">
+            <!-- [OVERVIEW] -->
+                <hr style="margin-top: .05%;">
+                <h1>Overview</h1>
+                <hr>
+                <table class="nthTableBorder">
+                    <tr>
+                    <!-- [LOG-METHODS] -->
+                        <td>
+                        <!-- [LEFT] -->
+                            The <span class="class">D</span> <span class="keyword">class</span> holds the <span class="keyword">public static</span> <span class="method">Methods</span> for the <span class="class">Debug</span> <span class="method">Logs</span>. <br><br>
+                            <span class="class">D</span>.<span class="method">Log</span>();          <br>
+                            <span class="class">D</span>.<span class="method">Warning</span>();   <br>
+                            <span class="class">D</span>.<span class="method">Error</span>();     <br>
+                            <span class="class">D</span>.<span class="method">Exception</span>(); <br><br>
+                            <span class="method">Log</span>(), <span class="method">Warning</span>() and <span class="method">Error</span>() are called just as the normal <span class="class">Debug</span> <span class="method">Logs</span>, but <span class="method">Exception</span>() <span class="keyword">returns</span> an <span class="class">Exception</span> and needs to be <span class="keyword">thrown</span> in order to see a console output. <br><br>
+                        </td>
+                        <td>
+                        <!-- [RIGHT] -->
+                            <table>
+                                <tr>
+                                    <td>
+                                        <div style="float: right;">
+                                            <span style="font-size: xx-small;">Click to copy Code</span> <br>
+                                            <a class="imageBorder" onclick='Copy("SimpleDebugFormatting.D.Log(\"Log output\");\nSimpleDebugFormatting.D.Warning(\"Warning output\");\nSimpleDebugFormatting.D.Error(\"Error output\");\nthrow SimpleDebugFormatting.D.Exception(\"Exception output\");")'>
+                                                <img src="Images/DebugLogs.png" alt="Click to copy Code" title="Click to copy Code">
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <img src="Images/DebugLogs_Log.png" alt="Debug Logs" title="Debug Logs" style="float: left;">
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                    <!-- [CHAIN] -->
+                        <td>
+                        <!-- [LEFT] -->
+                            <b class="underline">Chain as many <span class="struct">Messages</span> together as you want</b>
+                            <br>
+                            <span style="font-size: small;">
+                                <i>
+                                    Displays every value, that is not seen as a "<span class="parameter">Format-Parameter</span>" by the Plugin. 
+                                    <br> 
+                                    "<span class="parameter">Format-Parameter</span>" values can be displayed by applying the .<span class="method">ToString</span>()-<span class="method">Method</span> on the <span class="keyword">object</span>.
+                                </i>
+                            </span>
+                        </td>
+                        <td>
+                        <!-- [RIGHT] -->
+                            <span style="font-size: xx-small;">Click to copy Code</span> <br>
+                            <a class="imageBorder" onclick='Copy("SimpleDebugFormatting.D.Log(\"Lorem ipsum\", gameObject, 10.ToString(), true);")'>
+                                <img src="Images/MessageChain.png" alt="Click to copy Code" title="Click to copy Code">
+                            </a>
+                            <br>
+                            <img src="Images/MessageChain_Log.png" alt="Chain Messages" title="Chained Messages">
+                        </td>
+                    </tr>
+                    <tr>
+                    <!-- [FORMAT-INDIVIDUALLY] -->
+                        <td>
+                        <!-- [LEFT] -->
+                            <b class="underline">Format <span class="struct">Messages</span> individually</b>
+                            <br>
+                            <span style="font-size: small;">
+                                <i>
+                                    "<span class="parameter">Format-Parameter</span>" are applied to the preciding <span class="keyword">object</span> that is not a "<span class="parameter">Format-Parameter</span>" itself.
+                                    <br>
+                                    Multiple "<span class="parameter">Format-Parameter</span>" can be applied to an <span class="keyword">object</span>.
+                                </i>
+                            </span>
+                        </td>
+                        <td>
+                        <!-- [RIGHT] -->
+                            <span style="font-size: xx-small;">Click to copy Code</span> <br>
+                            <a class="imageBorder" onclick='Copy("SimpleDebugFormatting.D.Log(\"Lorem\", SimpleDebugFormatting.C.Red, 15, \"ipsum\", SimpleDebugFormatting.C.Green, SimpleDebugFormatting.F.BI);")'>
+                                <img src="Images/IndividualFormatting.png" alt="Click to copy Code" title="Click to copy Code">
+                            </a>
+                            <br>
+                            <img src="Images/IndividualFormatting_Log.png" alt="Individual Formatting" title="Individual Formatting">
+                        </td>
+                    </tr>
+                    <tr>
+                    <!-- [FORMAT-ALL] -->
+                        <td>
+                        <!-- [LEFT] -->
+                            <b class="underline">Format all <span class="struct">Messages</span> together</b>
+                            <br>
+                            <span style="font-size: small;">
+                                <i>
+                                    "<span class="parameter">Format-Parameter</span>" that come before the <b>first</b> <span class="keyword">string</span>/<span class="keyword">object</span>, are applied on every <span class="struct">Message</span> in the <span class="method">Log</span>.
+                                    <br>
+                                    <span class="struct">Messages</span> still keep their individual formatting.
+                                </i>
+                            </span>
+                            <br>
+                            <span style="font-size: small;"><i><a id="hideExample" href="#showExample">Show Example</a></i></span>
+                            <br>
+                            <div id="showExample" class="toggleImage">
+                                <a class="imageBorder"  href="#hideExample"><img src="Images/FormatAll_Example.png" alt="Example" title="Click to minimize"></a>
+                            </div>
+                        </td>
+                        <td>
+                        <!-- [RIGHT] -->
+                            <span style="font-size: xx-small;">Click to copy Code</span> <br>
+                            <a class="imageBorder" onclick='Copy("SimpleDebugFormatting.D.Log(SimpleDebugFormatting.C.Yellow, 10, SimpleDebugFormatting.F.I, \"Lorem\", 15, \"ipsum\", SimpleDebugFormatting.C.Aqua, false, SimpleDebugFormatting.F.B);")'>
+                                <img src="Images/FormatAll.png" alt="Click to copy Code" title="Click to copy Code">
+                            </a>
+                            <br>
+                            <img src="Images/FormatAll_Log.png" alt="Format the whole Log" title="Log formatting + individual formatting">
+                        </td>
+                    </tr>
+                    <tr>
+                    <!-- [COLLECTIONS] -->
+                        <td>
+                        <!-- [LEFT] -->
+                            <b class="underline">Display <span class="interface">Collections</span></b>
+                            <br>
+                            <span style="font-size: small;">
+                                <i>
+                                    Prints every entry of all <span class="interface">Collections</span>.
+                                    <br>
+                                    Formatting a <span class="interface">Collection</span> will format every entry inside it.
+                                </i>
+                            </span>
+                            <br>
+                            <span style="font-size: x-small;"><i>(The <span class="interface">Collection</span> size will always be displayed next to the <span class="interface">Collection</span>: "<b>COLLECTION_TYPE</b> { SIZE }").</i></span>
+                        </td>
+                        <td>
+                        <!-- [RIGHT] -->
+                            <span style="font-size: xx-small;">Click to copy Code</span> <br>
+                            <a class="imageBorder" onclick='Copy("SimpleDebugFormatting.D.Log(new System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<int>> { { \"Key_1\", new System.Collections.Generic.List<int>() }, { \"Key_2\", new System.Collections.Generic.List<int> { 1, 2 } } }, C.Aqua, 11);")'>
+                                <img src="Images/DisplayCollections.png" alt="Click to copy Code" title="Click to copy Code">
+                            </a>
+                            <br>
+                            <img src="Images/DisplayCollections_Log.png" alt="Display Collections" title="Every entry inside the Collections">
+                        </td>
+                    </tr>
+                </table>
+                <!-- [FORMAT-PARAMETER] -->
+                <h5><span class="underline"><span class="class">List</span> of all "<span class="parameter">Format-Parameter</span>"</span></h5>
+                <table align="center" class="tableBorder" style="width: 15vw; font-size: small;">
+                    <tr>
+                        <td><span class="enum" style="padding-left: 3.5em;">C</span> <span style="font-size: xx-small;"><i>(Color)</i></span></td>
+                        <td><span style="float: left;">(<i>Plugin <span class="keyword">enum</span></i>)</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="enum" style="padding-left: 3.875em;">F</span> <span style="font-size: xx-small;"><i>(Format)</i></span></td>
+                        <td><span style="float: left;">(<i>Plugin <span class="keyword">enum</span></i>)</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="enum" style="padding-left: 3.875em;">P</span> <span style="font-size: xx-small;"><i>(Preset)</i></span></td>
+                        <td><span style="float: left;">(<i>Plugin <span class="keyword">enum</span></i>)</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="struct">Color</span></td>
+                        <td><span style="float: left;">(<i>Unity <span class="keyword">struct</span></i>)</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="struct">Color32</span></td>
+                        <td><span style="float: left;">(<i>Unity <span class="keyword">struct</span></i>)</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="digit">Numbers</span></td>
+                        <td><span style="float: left;">(<i>C# number <span class="class">Types</span></i>)</span></td>
+                    </tr>
+                </table>
+                <i style="font-size: smaller;">If you need to display the values, just use the .<span class="method">ToString</span>() <span class="method">Method</span> on the <span class="keyword">object</span></i>.
+                <br>
+                <i style="font-size: x-small;">(The .<span class="method">ToString</span>() <span class="method">Method</span> is not needed, when there are only "<span class="parameter">Format-Parameter</span>" passed to the <span class="method">Log Method</span>)</i>
+            </div>
+            <div id="color">
+            <!-- [COLOR] -->
+                <hr>
+                <h1>Color</h1>
+                <hr>
+                <h5>There're 3 ways to color the console output.</h5>
+                <table class="tableBorder">
+                    <tr>
+                    <!-- [C] -->
+                        <th class="enum">C</th>
+                        <th class="struct">Color</th>
+                        <th class="struct">Color32</th>
+                    </tr>
+                    <tr>
+                    <!-- [COLOR] -->
+                        <td><span style="font-size: small;"><i>Custom <span class="keyword">enum</span> from this plugin that contains various pre defined colors</i></span></td>
+                        <td><span style="font-size: small;"><i>Unity's <span class="struct">Color</span> <span class="keyword">struct</span></i></span></td>
+                        <td><span style="font-size: small;"><i>Unity's <span class="struct">Color32</span> <span class="keyword">struct</span></i></span></td>
+                    </tr>
+                    <tr>
+                    <!-- [COLOR32] -->
+                        <td>
+                            <br>
+                            <span class="keyword">public enum</span> <span class="enum">C</span> <br> { 
+                            <span style="color: #00faff;">Aqua</span>, 
+                            <span style="color: #000000ff;">Black</span>, 
+                            <span style="color: #0000faff;">Blue</span>, 
+                            <span style="color: #a52a2aff;">Brown</span>, 
+                            <span style="color: #00faff;">Cyan</span>, 
+                            <span style="color: #0000a0ff;">DarkBlue</span>, 
+                            <span style="color: #ff00faff;">Fuchsia</span>, 
+                            <span style="color: #008000ff;">Green</span>, 
+                            <span style="color: #808080ff;">Grey</span>, 
+                            <span style="color: #add8e6ff;">LightBlue</span>, 
+                            <span style="color: #00ff00ff;">Lime</span>, 
+                            <span style="color: #ff00faff;">Magenta</span>, 
+                            <span style="color: #800000ff;">Maroon</span>, 
+                            <span style="color: #000080ff;">Navy</span>, 
+                            <span style="color: #808000ff;">Olive</span>, 
+                            <span style="color: #ffa500ff;">Orange</span>, 
+                            <span style="color: #800080ff;">Purple</span>, 
+                            <span style="color: #ff0000ff;">Red</span>, 
+                            <span style="color: #c0c0c0ff;">Silver</span>, 
+                            <span style="color: #008080ff;">Teal</span>, 
+                            <span style="color: #ffffffff;">White</span>, 
+                            <span style="color: #ffff00ff;">Yellow</span> }
+                        </td>
+                        <td>
+                            Needs a <span class="struct">Color</span> <span class="keyword">object</span>. <br>
+                            Color values are <span class="keyword">floats</span> (Range: <span class="digit">0f</span>-<span class="digit">1f</span>).
+                        </td>
+                        <td>
+                            Needs a <span class="struct">Color32</span> <span class="keyword">object</span>. <br>
+                            Color values are <span class="keyword">bytes</span> (Range: <span class="digit">0</span>-<span class="digit">255</span>).
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <!-- [COLOR-EXAMPLE] -->
+                <span style="font-size: xx-small;">Click to copy Code</span> <br>
+                <a class="imageBorder" onclick='Copy("SimpleDebugFormatting.D.Log(\"Plugin Color\", SimpleDebugFormatting.C.Red);\nSimpleDebugFormatting.D.Log(\"Unity&#39s Color\", new UnityEngine.Color(1f, 1f, 0f, 1f));\nSimpleDebugFormatting.D.Log(\"Unity&#39s Color32\", new UnityEngine.Color32(0, 0, 255, 255));")'> 
+                    <img src="Images/Colors.png" alt="Click to copy Code" title="Click to copy Code">
+                </a>
+                <br>
+                <img src="Images/Colors_Log.png" alt="Colored Messages" title="Colored Messages">
+            </div>
+            <div id="formats">
+            <!-- [FORMATS] -->
+                <hr>
+                <h1>Formats</h1>
+                <hr>
+                <h5>The <span class="enum">F</span> <span class="keyword">enum</span> is a custom <span class="keyword">enum</span> from this Plugin, to format the console output in different styles.</h5>
+                <table class="tableBorder">
+                    <tr>
+                    <!-- [BOLD] -->
+                        <td>
+                        <!-- [LEFT] -->
+                            <span class="underline">Displays the <span class="struct">Message</span> in [<b>BOLD</b>]</span>
+                        </td>
+                        <td>
+                        <!-- [RIGHT] -->
+                            <table>
+                                <tr>
+                                    <td style="border-color: rgba(0, 0, 0, 0); background: rgba(0, 0, 0, 0);">
+                                        <div style="float: right;">
+                                            <span style="font-size: xx-small;">Click to copy Code</span> <br>
+                                            <a class="imageBorder" onclick='Copy("SimpleDebugFormatting.D.Log(\"Bold Text\", SimpleDebugFormatting.F.B);")'>
+                                                <img src="Images/Formats_B.png" alt="Click to copy Code" title="Click to copy Code">
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td style="border-color: rgba(0, 0, 0, 0); background: rgba(0, 0, 0, 0);"><img src="Images/Formats_B_Log.png" alt="Bold Text" title="Bold Text" style="float: left;"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                    <!-- [ITALIC] -->
+                        <td>
+                        <!-- [LEFT] -->
+                            <span class="underline">Displays the <span class="struct">Message</span> in [<i>ITALIC</i>]</span>
+                        </td>
+                        <td>
+                        <!-- [RIGHT] -->
+                            <table>
+                                <tr>
+                                    <td style="border-color: rgba(0, 0, 0, 0); background: rgba(0, 0, 0, 0);">
+                                        <div style="float: right;">
+                                            <span style="font-size: xx-small;">Click to copy Code</span> <br>
+                                            <a class="imageBorder" onclick='Copy("SimpleDebugFormatting.D.Log(\"Italic Text\", SimpleDebugFormatting.F.I);")'>
+                                                <img src="Images/Formats_I.png" alt="Click to copy Code" title="Click to copy Code">
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td style="border-color: rgba(0, 0, 0, 0); background: rgba(0, 0, 0, 0);"><img src="Images/Formats_I_Log.png" alt="Italic Text" title="Italic Text" style="float: left;"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                    <!-- [NEW-LINE] -->
+                        <td>
+                        <!-- [LEFT] -->
+                            <span class="underline">Displays the <span class="struct">Message/s</span> in a [<span class="string">separate line</span>]</span> <br>
+                            <span style="font-size: x-small;"><i>Useful for when a <span class="struct">Message</span> is passed as a <span class="interface">Collection</span>, <br> but also works on every other <span class="struct">Message</span> <span class="keyword">object</span>.</i></span>
+                        </td>
+                        <td>
+                        <!-- [RIGHT] -->
+                            <table>
+                                <tr>
+                                    <td style="border-color: rgba(0, 0, 0, 0); background: rgba(0, 0, 0, 0);">
+                                        <div style="float: right;">
+                                            <span style="font-size: xx-small;">Click to copy Code</span> <br>
+                                            <a class="imageBorder" onclick='Copy("SimpleDebugFormatting.D.Log(new System.Collections.Generic.List<string> { \"Entry_1\", \"Entry_2\", \"Entry_3\" }, SimpleDebugFormatting.F.NL);")'>
+                                                <img src="Images/Formats_NL.png" alt="Click to copy Code" title="Click to copy Code">
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td style="border-color: rgba(0, 0, 0, 0); background: rgba(0, 0, 0, 0);"><img src="Images/Formats_NL_Log.png" alt="New Line" title="Output of every entry in the list in a new line" style="float: left;"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                    <!-- [NEW-LOG] -->
+                        <td>
+                        <!-- [LEFT] -->
+                            <span class="underline">Displays the <span class="struct">Message/s</span> in a [<span class="method">separate Log</span>]</span> <br>
+                            <span style="font-size: x-small;"><i>Useful for when a <span class="struct">Message</span> is passed as a <span class="interface">Collection</span>, <br> but also works on every other <span class="struct">Message</span> <span class="keyword">object</span>.</i></span>
+                        </td>
+                        <td>
+                        <!-- [RIGHT] -->
+                            <table>
+                                <tr>
+                                    <td style="border-color: rgba(0, 0, 0, 0); background: rgba(0, 0, 0, 0);">
+                                        <div style="float: right;">
+                                            <span style="font-size: xx-small;">Click to copy Code</span> <br>
+                                            <a class="imageBorder" onclick='Copy("SimpleDebugFormatting.D.Log(new System.Collections.Generic.List<string> { \"Entry_1\", \"Entry_2\", \"Entry_3\" }, SimpleDebugFormatting.F.LOG);")'>
+                                                <img src="Images/Formats_LOG.png" alt="Click to copy Code" title="Click to copy Code">
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td style="border-color: rgba(0, 0, 0, 0); background: rgba(0, 0, 0, 0);"><img src="Images/Formats_LOG_Log.png" alt="New Log" title="Output of every entry in the list in a new Log" style="float: left;"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                    <!-- [INDEX] -->
+                        <td>
+                        <!-- [LEFT] -->
+                            <span class="underline">Displays the [<span class="digit">index</span>], the <span class="struct">Message</span> has in its <span class="interface">Collection</span>, next to it</span> <br>
+                            <span style="font-size: x-small;"><i>Only has an effect when the <span class="struct">Message</span> <span class="keyword">object</span> comes from a <span class="interface">Collection</span>.</i></span>
+                        </td>
+                        <td> 
+                        <!-- [RIGHT] -->
+                            <table>
+                                <tr>
+                                    <td style="border-color: rgba(0, 0, 0, 0); background: rgba(0, 0, 0, 0);">
+                                        <div style="float: right;">
+                                            <span style="font-size: xx-small;">Click to copy Code</span> <br>
+                                            <a class="imageBorder" onclick='Copy("SimpleDebugFormatting.D.Log(new System.Collections.Generic.List<string> { \"Entry_1\", \"Entry_2\", \"Entry_3\" }, SimpleDebugFormatting.F.INDEX);")'>
+                                                <img src="Images/Formats_INDEX.png" alt="Click to copy Code" title="Click to copy Code">
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td style="border-color: rgba(0, 0, 0, 0); background: rgba(0, 0, 0, 0);"><img src="Images/Formats_INDEX_Log.png" alt="Index" title="Displays the index next to every entry" style="float: left;"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <h5>
+                <!-- [ALL-FORMATS] -->
+                    The above <span class="enum">Formats</span> are the 5 basic settings, but the <span class="keyword">enum</span> has combinations of all of them.
+                    <br>
+                    <a href="#showFormats" id="hideFormats">Show all</a>
+                </h5>
+                <div id="showFormats" class="toggleImage">
+                    <a class="imageBorder" href="#hideFormats"><img src="Images/Formats.png" alt="Formats" title="Click to minimize"></a>
+                 </div>
+            </div>
+            <div id="size">
+            <!-- [SIZE] -->
+                <hr>
+                <h1>Size</h1>
+                <hr>
+                <h5>Passing a number after a <span class="keyword">string</span>/<span class="keyword">object</span>, will set the <span class="struct">Messages</span> size.</h5>
+                <span style="font-size: xx-small;">Click to copy Code</span> <br>
+                <a class="imageBorder" onclick='Copy("SimpleDebugFormatting.D.Log(\"Size\", 20);")'>
+                    <img src="Images/Size.png" alt="Click to copy Code" title="Click to copy Code">
+                </a>
+                <br>
+                <img src="Images/Size_Log.png" alt="Message size" title="Displays the Message in a different size">
+                <br>
+                <span style="font-size: smaller;"><i>(Unity's default size is <span class="digit">12</span>)</i></span>
+            </div>
+            <div id="presets">
+            <!-- [PRESETS] -->
+                <hr>
+                <h1>Presets</h1>
+                <hr>
+                <h5>With the <span class="enum">P</span> <span class="keyword">enum</span> you're able to save multiple <span class="enum">format</span> settings and apply them by just calling that <span class="keyword">enum</span> entry.</h5>
+                <table class="tableBorder">
+                    <tr>
+                    <!-- [ADDING] -->
+                        <td>
+                        <!-- [LEFT] -->
+                            <span class="underline">Adding a new <span class="enum">Preset</span></span> <br>
+                            <span style="font-size: x-small;">
+                                <i>
+                                    Go to the "<span class="string">Presets_SDF_SOB</span>"-<b><span class="scriptableObject">ScriptableObject</span></b>, under "<span class="string">../Simple Debug Formatting/Resources/Presets_SDF_SOB.asset</span>". <br>
+                                    Click the "<b>+</b>" Button on the bottom right to create a new <span class="enum">Preset</span>. <br>
+                                    After creation, choose a name for the <span class="enum">Preset</span>, set all settings to your liking and click the "<span class="method">Generate Presets</span>" Button.
+                                </i>
+                            </span>
+                            <br><br>
+                            <span class="underline warning">IMPORTANT</span> <br>
+                            <span style="font-size: small;">
+                                After removing a <span class="enum">Preset</span> from the <span class="class">List</span>, "<span class="method">Generate Presets</span>" will only remove the <span class="enum">Preset</span> from the <span class="enum">P</span> <span class="keyword">enum</span>! <br>
+                                If you still have usages of that <span class="enum">Preset</span> in any of your scripts, you have to remove those yourself!
+                            </span>
+                        </td>
+                        <td>
+                        <!-- [RIGHT] -->
+                            <img src="Images/Presets_Add.png" alt="Adding Presets" title="Add a new Preset">
+                        </td>
+                    </tr>
+                    <tr>
+                    <!-- [MESSAGES] -->
+                        <td>
+                        <!-- [LEFT] -->
+                            <span class="underline">Messages</span> <br>
+                            <span style="font-size: x-small;">
+                                <i>
+                                    Since the <span class="enum">Preset</span> names will be written into the <span class="keyword">enum</span>, they have to follow the <span class="keyword">enum</span> naming conventions. <br>
+                                    Whenever there's an <span class="error">error</span>, the Message box will display what you have to change and also color the "<span class="string">Name</span>" on the <span class="enum">Preset</span> that has the <span class="error">error</span>, red. <br>
+                                    You can only Generate the <span class="enum">Presets</span> when there're no <span class="error">errors</span>! <br>
+                                    <br>
+                                    The "<span class="warning">Changes detected!</span>" Message will be visible when the names in the inspector don't match with the <span class="keyword">enum</span> entries in <span class="enum">P</span>. <br>
+                                    <span style="font-size: xx-small; vertical-align: top;">(After adding a new <span class="enum">Preset</span> or renaming an existing one)</span> <br>
+                                    Alwyas click the "<span class="method">Generate Presets</span>" Button when you see this Message! Otherwise not all <span class="enum">Presets</span> will work correctly.
+                                </i>
+                            </span>
+                        </td>
+                        <td>
+                        <!-- [RIGHT] -->
+                            <img src="Images/Presets_Messages.png" alt="Presets Messages" title="Presets Messages">
+                        </td>
+                    </tr>
+                </table>
+                <!-- [PRESETS-EXAMPLE] -->
+                <h3><span class="underline">Usage</span></h3>
+                <img src="Images/Preset_Inspector.png" alt="Inspector Preset" title="Preset in the Inspector">
+                <br>
+                <span style="font-size: xx-small;">Click to copy Code</span> <br>
+                <a class="imageBorder" onclick='Copy("SimpleDebugFormatting.D.Log(new System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<int>> { { \"List_1\", new System.Collections.Generic.List<int>() }, { \"List_2\", new System.Collections.Generic.List<int> { 1, 2 } } }, SimpleDebugFormatting.P.LoremIpsum);")'>
+                    <img src="Images/Preset_Code.png" alt="Click to copy Code" title="Click to copy Code">
+                </a>
+                <br>
+                <img src="Images/Preset_Log.png" alt="Preset" title="Preset">
+            </div>
+            <div id="settings">
+            <!-- [SETTINGS] -->
+                <hr>
+                <h1>Settings</h1>
+                <hr>
+                <h5>
+                    <span class="scriptableObject">ScriptableObject</span> to apply general settings for the Plugin. <br>
+                    <span style="font-size: x-small;">("<span class="string">../Simple Debug Formatting/Resources/Settings_SDF_SOB.asset</span>")</span>
+                </h5>
+                <span style="font-size: xx-small; vertical-align: bottom;">Hover to enlarge</span> <br>
+                <img src="Images/Settings.png" alt="Settings" title="Settings">
+            </div>
+            <div id="usefull">
+            <!-- [USEFULL] -->
+                <hr>
+                <h1>Usefull</h1>
+                <hr>
+                <table class="tableBorder">
+                    <tr>
+                    <!-- [EXTENSIONS] -->
+                        <td>
+                        <!-- [LEFT] -->
+                            <span class="underline">Extensions</span> <br>
+                            <span style="font-size: x-small;">
+                                <i>
+                                    All <span class="method">Methods</span> can also be used as Extension-<span class="method">Methods</span>.
+                                </i>
+                            </span>
+                        </td>
+                        <td>
+                        <!-- [RIGHT] -->
+                            <table>
+                                <tr>
+                                    <td style="border-color: rgba(0, 0, 0, 0); background: rgba(0, 0, 0, 0);">
+                                        <div style="float: right;">
+                                            <span style="font-size: xx-small;">Click to copy Code</span> <br>
+                                            <a class="imageBorder" onclick='Copy("var String = \"Lorem ipsum\";\nvar List = new System.Collections.Generic.List<string>();\nvar Exception = new System.Exception(\"Lorem ipsum\");\n\nString.Log();\n10.Warning(C.Red, 20);\nList.Error(F.NL);\nthrow Exception.Exception(F.BI);")'>
+                                                <img src="Images/Extensions.png" alt="Click to copy Code" title="Click to copy Code">
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td style="border-color: rgba(0, 0, 0, 0); background: rgba(0, 0, 0, 0);"><img src="Images/Extensions_Log.png" alt="Extensions" title="Methods can also be used as Extensions" style="float: left;"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- [STACKTRACE] -->
+                    <tr>
+                        <td>
+                        <!-- [LEFT] -->
+                            <span class="underline">No <span style="color: #4B7AF3;">Stacktrace</span></span> <br>
+                            <span style="font-size: x-small;">
+                                <i>
+                                    The <span class="class">DebugLog</span>.cs script is exported as a .DLL, so the Plugin won't be <span style="color: #4B7AF3;">linked</span> in the console's <span style="color: #4B7AF3;">stacktrace</span>, <br>
+                                    so the first <span style="color: #4B7AF3;">link</span> will be to the script where the actual <span class="method">Log Method</span> was called.
+                                </i>
+                            </span>
+                        </td>
+                        <td>
+                        <!-- [RIGHT] -->
+                            <span style="font-size: xx-small; vertical-align: bottom;"><i>(With .DLL)</i></span>
+                            <br>
+                            <img src="Images/WithoutStacktrace.png" alt="Without Stacktrace" title="First link will be the class where the Log Method was called">
+                            <br>
+                            <span style="font-size: xx-small; vertical-align: bottom;"><i>(Without .DLL)</i></span>
+                            <br>
+                            <img src="Images/WithStacktrace.png" alt="With Stacktrace" title="First link will be the DebugLog class">
+                        </td>
+                    </tr>
+                    <tr>
+                    <!-- [LONG-MESSAGE] -->
+                        <td>
+                        <!-- [LEFT] -->
+                            <span class="underline">Long <span class="struct">Messages</span></span> <br>
+                            <span style="font-size: x-small;"><i><span class="struct">Messages</span> that exceed the maximum <span class="keyword">char</span> amount of a single <span class="class">Debug</span>.<span class="method">Log</span>() (<span class="digit">16299</span>), will automatically be split into multiple <span class="method">Logs</span>.</i></span>
+                        </td>
+                        <td>
+                        <!-- [RIGHT] -->
+                            <table>
+                                <tr>
+                                    <td style="border-color: rgba(0, 0, 0, 0); background: rgba(0, 0, 0, 0);">
+                                        <div style="float: right;">
+                                            <span style="font-size: xx-small;">Click to copy Code</span> <br>
+                                            <a class="imageBorder" onclick='Copy("SimpleDebugFormatting.D.Log(\"", true)'>
+                                                <img src="Images/LongString.png" alt="Click to copy Code" title="Click to copy Code">
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td style="border-color: rgba(0, 0, 0, 0); background: rgba(0, 0, 0, 0);"><img src="Images/LongString_Log.png" alt="Long String" title="Long Messages will automatically be split into multiple Logs" style="float: left;"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                    <!-- [USING-STATIC] -->
+                        <td>
+                        <!-- [LEFT] -->
+                            <span class="keyword underline">Using static</span> <br>
+                            <span style="font-size: x-small;">
+                                <i>
+                                    If your project is running on at least <b><span class="underline">.Net 4.6</span> (<span class="underline">C#-6</span>)</b> (<span class="underline">implemented in Unity 2017.1.0 or higher</span>) <br>
+                                    You can use the following <span class="keyword">statements</span>, to access the <span class="method">Methods</span>/<span class="enum">Enum</span>-entries without using the <span class="class">Class</span>/<span class="enum">Enum</span> name in the call. 
+                                    <br><br> 
+                                    <a title="Click to copy" class="hoverEffect" style="display: block; width: max-content; margin: auto; font-size: 1.25em;" onclick='Copy("using static SimpleDebugFormatting.D;\nusing static SimpleDebugFormatting.C;\nusing static SimpleDebugFormatting.F;\nusing static SimpleDebugFormatting.P;")'>
+                                        <span style="font-size: xx-small;">Click to copy Code</span> <br>
+                                        <span class="keyword">using static </span> <span style="color: #D7D7D7;">SimpleDebugFormatting.</span><span class="class">D</span><span style="color: #D7D7D7;">;</span><br>
+                                        <span class="keyword">using static </span> <span style="color: #D7D7D7;">SimpleDebugFormatting.</span><span class="enum">C</span><span style="color: #D7D7D7;">;</span><br>
+                                        <span class="keyword">using static </span> <span style="color: #D7D7D7;">SimpleDebugFormatting.</span><span class="enum">F</span><span style="color: #D7D7D7;">;</span><br>
+                                        <span class="keyword">using static </span> <span style="color: #D7D7D7;">SimpleDebugFormatting.</span><span class="enum">P</span><span style="color: #D7D7D7;">;</span><br>
+                                    </a>
+                                </i>
+                            </span>
+                            <br>
+                            <span style="font-size: small;"><i><a id="hideCVersion" href="#showCVersion">Check C# version</a></i></span>
+                            <br>
+                            <a href="#hideCVersion" title="Click to minimize" id="showCVersion" class="toggleImage" style="display: block; width: max-content; margin: auto; text-decoration: none;">
+                                <span style="font-size: x-small; color:#D7D7D7;"><i>"<span class="string">Edit/Project Settings/Player/Other Settings</span>"</i></span>
+                                <br>
+                                <img src="Images/ApiCompatibilityLevel.png" alt="Current Versions" title="Click to minimize">
+                                <br>
+                                <span style="font-size: xx-small; vertical-align: top; color:#D7D7D7;"><i>(Current versions)</i></span>
+                                <br>
+                                <img src="Images/ScriptingRuntimeVersion.png" alt="Older Versions" title="Click to minimize">
+                                <br>
+                                <span style="font-size: xx-small; vertical-align: top; color:#D7D7D7;"><i>(Older versions)</i></span>
+                            </a>
+                        </td>
+                        <td>
+                        <!-- [RIGHT] -->
+                            <span style="font-size: xx-small;">Click to copy Code</span> <br>
+                            <a class="imageBorder" onclick='Copy("Log(\"Using static\", Aqua, BI, Preset);")'>
+                                <img src="Images/UsingStatic.png" alt="Click to copy Code" title="Click to copy Code">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+                <h5><i>Plugin works with Unity 2017.1.0 or higher</i></h5>
+            </div>
+            <div id="footer">
+            <!-- [FOOTER] -->
+                <hr>
+                <h5>For BugReports, questions, requests and/or feedback, you can contact me under: <a href="mailto:markherdt1508@gmail.com?subject=Simple Debug Formatting" alt="E-Mail" title="Click to Copy" onclick='Copy("markherdt1508@gmail.com")'>markherdt1508@gmail.com</a></h5>
+                <hr>
+            </div>
+        </div>
+    </body>
+</html>

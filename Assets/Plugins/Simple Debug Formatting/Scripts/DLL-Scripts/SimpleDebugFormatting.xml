@@ -1,0 +1,1429 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SimpleDebugFormatting</name>
+    </assembly>
+    <members>
+        <member name="T:SimpleDebugFormatting.D">
+            <summary>
+            For displaying formatted Debug.Logs
+            </summary>
+        </member>
+        <member name="F:SimpleDebugFormatting.D.debugFormat">
+            <summary>
+            Reference to the "DebugFormat"-Class
+            </summary>
+        </member>
+        <member name="F:SimpleDebugFormatting.D.disableLogs">
+            <summary>
+            Reference to the "DisableLogs"-Property in the "Settings"-class
+            </summary>
+        </member>
+        <member name="F:SimpleDebugFormatting.D.concatMessages">
+            <summary>
+            Reference to the "ConcatMessages()"-Method in the "DebugFormat"-class
+            </summary>
+        </member>
+        <member name="F:SimpleDebugFormatting.D.ASSEMBLY_PLUGIN">
+            <summary>
+            Name of the Assembly, the Plugin is in
+            </summary>
+        </member>
+        <member name="F:SimpleDebugFormatting.D.ASSEMBLY_CSHARP">
+            <summary>
+            Name of the Assembly, the Plugin is in (For older Unity versions without AssemblyDefinitionFiles)
+            </summary>
+        </member>
+        <member name="F:SimpleDebugFormatting.D.DEBUG_FORMAT_CLASS">
+            <summary>
+            Name of the "DebugFormat"-class
+            </summary>
+        </member>
+        <member name="F:SimpleDebugFormatting.D.SETTINGS_CLASS">
+            <summary>
+            Name of the "Settings"-class
+            </summary>
+        </member>
+        <member name="F:SimpleDebugFormatting.D.EDITOR_LOGS">
+            <summary>
+            Property name to disable the Logs in the Editor
+            </summary>
+        </member>
+        <member name="F:SimpleDebugFormatting.D.BUILD_LOGS">
+            <summary>
+            Property name to disable the Logs in Build
+            </summary>
+        </member>
+        <member name="F:SimpleDebugFormatting.D.METHOD_NAME">
+            <summary>
+            Name of the Method to invoke
+            </summary>
+        </member>
+        <member name="P:SimpleDebugFormatting.D.DebugFormat">
+            <summary>
+            Reference to the "DebugFormat"-Class
+            </summary>
+        </member>
+        <member name="P:SimpleDebugFormatting.D.DisableLogs">
+            <summary>
+            Disables the Logs if true
+            </summary>
+        </member>
+        <member name="P:SimpleDebugFormatting.D.ConcatMessages">
+            <summary>
+            Reference to the "ConcatMessages()"-Method in the "DebugFormat"-class
+            </summary>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.GetClass(System.String,System.String)">
+            <summary>
+            Returns a reference to the given Class in the given Assembly
+            </summary>
+            <param name="_Assembly">The Assembly to search the Class in</param>
+            <param name="_Class">The Class to search for</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Log_SDF(System.Byte)">
+            <summary>
+            Displays a "byte"-value in the Console
+            </summary>
+            <param name="_Message">The "byte" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Log_SDF(System.SByte)">
+            <summary>
+            Displays an "sbyte"-value in the Console
+            </summary>
+            <param name="_Message">The "sbyte" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Log_SDF(System.Int16)">
+            <summary>
+            Displays a "short"-value in the Console
+            </summary>
+            <param name="_Message">The "short" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Log_SDF(System.UInt16)">
+            <summary>
+            Displays a "ushort"-value in the Console
+            </summary>
+            <param name="_Message">The "ushort" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Log_SDF(System.Int32)">
+            <summary>
+            Displays an "int"-value in the Console
+            </summary>
+            <param name="_Message">The "int" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Log_SDF(System.UInt32)">
+            <summary>
+            Displays a "uint"-value in the Console
+            </summary>
+            <param name="_Message">The "uint" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Log_SDF(System.Int64)">
+            <summary>
+            Displays a "long"-value in the Console
+            </summary>
+            <param name="_Message">The "long" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Log_SDF(System.UInt64)">
+            <summary>
+            Displays a "ulong"-value in the Console
+            </summary>
+            <param name="_Message">The "ulong" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Log_SDF(System.Decimal)">
+            <summary>
+            Displays a "decimal"-value in the Console
+            </summary>
+            <param name="_Message">The "decimal" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Log_SDF(System.Single)">
+            <summary>
+            Displays a "float"-value in the Console
+            </summary>
+            <param name="_Message">The "float" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Log_SDF(System.Double)">
+            <summary>
+            Displays a "double"-value in the Console
+            </summary>
+            <param name="_Message">The "double" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Log_SDF(System.Char)">
+            <summary>
+            Displays a "char"-value in the Console
+            </summary>
+            <param name="_Message">The "char" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Log_SDF(System.Object,System.Boolean)">
+            <summary>
+            Displays an "object" in the Console
+            </summary>
+            <param name="_Message">The "object" to display</param>
+            <param name="_DontFormat">True = Displays this Message without any formatting</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Log_SDF(System.Object[])">
+            <summary>
+            Displays multiple Objects with different formatting in the Console                                            <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Messages">Message and Format arguments</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Warning_SDF(System.Byte)">
+            <summary>
+            Displays a "byte"-value in the Console
+            </summary>
+            <param name="_Message">The "byte" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Warning_SDF(System.SByte)">
+            <summary>
+            Displays an "sbyte"-value in the Console
+            </summary>
+            <param name="_Message">The "sbyte" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Warning_SDF(System.Int16)">
+            <summary>
+            Displays a "short"-value in the Console
+            </summary>
+            <param name="_Message">The "short" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Warning_SDF(System.UInt16)">
+            <summary>
+            Displays a "ushort"-value in the Console
+            </summary>
+            <param name="_Message">The "ushort" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Warning_SDF(System.Int32)">
+            <summary>
+            Displays an "int"-value in the Console
+            </summary>
+            <param name="_Message">The "int" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Warning_SDF(System.UInt32)">
+            <summary>
+            Displays a "uint"-value in the Console
+            </summary>
+            <param name="_Message">The "uint" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Warning_SDF(System.Int64)">
+            <summary>
+            Displays a "long"-value in the Console
+            </summary>
+            <param name="_Message">The "long" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Warning_SDF(System.UInt64)">
+            <summary>
+            Displays a "ulong"-value in the Console
+            </summary>
+            <param name="_Message">The "ulong" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Warning_SDF(System.Decimal)">
+            <summary>
+            Displays a "decimal"-value in the Console
+            </summary>
+            <param name="_Message">The "decimal" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Warning_SDF(System.Single)">
+            <summary>
+            Displays a "float"-value in the Console
+            </summary>
+            <param name="_Message">The "float" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Warning_SDF(System.Double)">
+            <summary>
+            Displays a "double"-value in the Console
+            </summary>
+            <param name="_Message">The "double" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Warning_SDF(System.Char)">
+            <summary>
+            Displays a "char"-value in the Console
+            </summary>
+            <param name="_Message">The "char" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Warning_SDF(System.Object,System.Boolean)">
+            <summary>
+            Displays an "object" in the Console
+            </summary>
+            <param name="_Message">The "object" to display</param>
+            <param name="_DontFormat">True = Displays this Message without any formatting</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Warning_SDF(System.Object[])">
+            <summary>
+            Displays multiple Objects with different formatting in the Console                                            <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Messages">Message and Format arguments</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Error_SDF(System.Byte)">
+            <summary>
+            Displays a "byte"-value in the Console
+            </summary>
+            <param name="_Message">The "byte" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Error_SDF(System.SByte)">
+            <summary>
+            Displays an "sbyte"-value in the Console
+            </summary>
+            <param name="_Message">The "sbyte" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Error_SDF(System.Int16)">
+            <summary>
+            Displays a "short"-value in the Console
+            </summary>
+            <param name="_Message">The "short" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Error_SDF(System.UInt16)">
+            <summary>
+            Displays a "ushort"-value in the Console
+            </summary>
+            <param name="_Message">The "ushort" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Error_SDF(System.Int32)">
+            <summary>
+            Displays an "int"-value in the Console
+            </summary>
+            <param name="_Message">The "int" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Error_SDF(System.UInt32)">
+            <summary>
+            Displays a "uint"-value in the Console
+            </summary>
+            <param name="_Message">The "uint" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Error_SDF(System.Int64)">
+            <summary>
+            Displays a "long"-value in the Console
+            </summary>
+            <param name="_Message">The "long" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Error_SDF(System.UInt64)">
+            <summary>
+            Displays a "ulong"-value in the Console
+            </summary>
+            <param name="_Message">The "ulong" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Error_SDF(System.Decimal)">
+            <summary>
+            Displays a "decimal"-value in the Console
+            </summary>
+            <param name="_Message">The "decimal" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Error_SDF(System.Single)">
+            <summary>
+            Displays a "float"-value in the Console
+            </summary>
+            <param name="_Message">The "float" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Error_SDF(System.Double)">
+            <summary>
+            Displays a "double"-value in the Console
+            </summary>
+            <param name="_Message">The "double" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Error_SDF(System.Char)">
+            <summary>
+            Displays a "char"-value in the Console
+            </summary>
+            <param name="_Message">The "char" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Error_SDF(System.Object,System.Boolean)">
+            <summary>
+            Displays an "object" in the Console
+            </summary>
+            <param name="_Message">The "object" to display</param>
+            <param name="_DontFormat">True = Displays this Message without any formatting</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Error_SDF(System.Object[])">
+            <summary>
+            Displays multiple Objects with different formatting in the Console                                            <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Messages">Message and Format arguments</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Exception_SDF(System.Byte)">
+            <summary>
+            Displays a "byte"-value in the Console
+            </summary>
+            <param name="_Message">The "byte" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Exception_SDF(System.SByte)">
+            <summary>
+            Displays an "sbyte"-value in the Console
+            </summary>
+            <param name="_Message">The "sbyte" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Exception_SDF(System.Int16)">
+            <summary>
+            Displays a "short"-value in the Console
+            </summary>
+            <param name="_Message">The "short" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Exception_SDF(System.UInt16)">
+            <summary>
+            Displays a "ushort"-value in the Console
+            </summary>
+            <param name="_Message">The "ushort" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Exception_SDF(System.Int32)">
+            <summary>
+            Displays an "int"-value in the Console
+            </summary>
+            <param name="_Message">The "int" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Exception_SDF(System.UInt32)">
+            <summary>
+            Displays a "uint"-value in the Console
+            </summary>
+            <param name="_Message">The "uint" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Exception_SDF(System.Int64)">
+            <summary>
+            Displays a "long"-value in the Console
+            </summary>
+            <param name="_Message">The "long" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Exception_SDF(System.UInt64)">
+            <summary>
+            Displays a "ulong"-value in the Console
+            </summary>
+            <param name="_Message">The "ulong" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Exception_SDF(System.Decimal)">
+            <summary>
+            Displays a "decimal"-value in the Console
+            </summary>
+            <param name="_Message">The "decimal" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Exception_SDF(System.Single)">
+            <summary>
+            Displays a "float"-value in the Console
+            </summary>
+            <param name="_Message">The "float" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Exception_SDF(System.Double)">
+            <summary>
+            Displays a "double"-value in the Console
+            </summary>
+            <param name="_Message">The "double" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Exception_SDF(System.Char)">
+            <summary>
+            Displays a "char"-value in the Console
+            </summary>
+            <param name="_Message">The "char" to display</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Exception_SDF(System.Object,System.Boolean)">
+            <summary>
+            Displays an "object" in the Console
+            </summary>
+            <param name="_Message">The "object" to display</param>
+            <param name="_DontFormat">True = Displays this Message without any formatting</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Exception_SDF(System.Exception,System.Exception,System.Boolean)">
+            <summary>
+            Displays an "Exception" in the Console
+            </summary>
+            <param name="_Exception">The "Exception" to display</param>
+            <param name="_InnerException">The "InnerException" to display</param>
+            <param name="_DontFormat">True = Displays this Message without any formatting</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.Exception_SDF(System.Object[])">
+            <summary>
+            Displays multiple Objects with different formatting in the Console                                            <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Messages">Message and Format arguments</param>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.AddNewLine(System.Object)">
+            <summary>
+            Adds an empty line at the end of each log, so there is space between user log and Unity's stacktrace
+            </summary>
+            <param name="_Message">The Message to add a new Line to</param>
+            <returns>Returns the formatted Message</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.D.GetMessages``1(``0[])">
+            <summary>
+            Invokes the "ConcatMessages"-Method in the "DebugFormat"-Class via Reflection
+            </summary>
+            <param name="_Parameters">The parameters to pass to the "ConcatMessages"-Method</param>
+            <returns>Returns a List of strings, where each element is a different Message for the DebugLog</returns>
+        </member>
+        <member name="T:SimpleDebugFormatting.DExtension">
+            <summary>
+            For displaying formatted Debug.Logs, as Extension-Methods
+            </summary>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Log_SDF(System.Byte,System.Object[])">
+            <summary>
+            Displays a "byte"-value in the Console                                                                        <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "byte" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "byte"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Log_SDF(System.SByte,System.Object[])">
+            <summary>
+            Displays an "sbyte"-value in the Console                                                                      <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "sbyte" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "sbyte"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Log_SDF(System.Int16,System.Object[])">
+            <summary>
+            Displays a "short"-value in the Console                                                                       <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "short" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "short"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Log_SDF(System.UInt16,System.Object[])">
+            <summary>
+            Displays a "ushort"-value in the Console                                                                      <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "ushort" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "ushort"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Log_SDF(System.Int32,System.Object[])">
+            <summary>
+            Displays an "int"-value in the Console                                                                        <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "int" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "int"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Log_SDF(System.UInt32,System.Object[])">
+            <summary>
+            Displays a "uint"-value in the Console                                                                        <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "uint" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "uint"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Log_SDF(System.Int64,System.Object[])">
+            <summary>
+            Displays a "long"-value in the Console                                                                        <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "long" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "long"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Log_SDF(System.UInt64,System.Object[])">
+            <summary>
+            Displays a "ulong"-value in the Console                                                                       <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "ulong" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "ulong"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Log_SDF(System.Decimal,System.Object[])">
+            <summary>
+            Displays a "decimal"-value in the Console                                                                     <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "decimal" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "decimal"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Log_SDF(System.Single,System.Object[])">
+            <summary>
+            Displays a "float"-value in the Console                                                                       <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "float" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "float"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Log_SDF(System.Double,System.Object[])">
+            <summary>
+            Displays a "double"-value in the Console                                                                      <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "double" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "double"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Log_SDF(System.Char,System.Object[])">
+            <summary>
+            Displays a "char"-value in the Console                                                                        <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "char" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "char"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Log_SDF(UnityEngine.Color,System.Object[])">
+            <summary>
+            Displays a "Color"-value in the Console                                                                       <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "Color" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "Color"</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Log_SDF(UnityEngine.Color32,System.Object[])">
+            <summary>
+            Displays a "Color32"-value in the Console                                                                     <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "Color32" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "Color32"</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Log_SDF``1(``0,System.Boolean)">
+            <summary>
+            Displays an "object" in the Console
+            </summary>
+            <param name="_Message">The "object" to display</param>
+            <param name="_DontFormat">True = Displays this Message without any formatting</param>
+            <returns>Returns the "object"</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Log_SDF``1(``0,System.Object[])">
+            <summary>
+            Displays multiple Objects with different formatting in the Console                                            <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "object" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "object"</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Warning_SDF(System.Byte,System.Object[])">
+            <summary>
+            Displays a "byte"-value in the Console                                                                        <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "byte" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "byte"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Warning_SDF(System.SByte,System.Object[])">
+            <summary>
+            Displays an "sbyte"-value in the Console                                                                      <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "sbyte" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "sbyte"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Warning_SDF(System.Int16,System.Object[])">
+            <summary>
+            Displays a "short"-value in the Console                                                                       <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "short" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "short"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Warning_SDF(System.UInt16,System.Object[])">
+            <summary>
+            Displays a "ushort"-value in the Console                                                                      <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "ushort" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "ushort"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Warning_SDF(System.Int32,System.Object[])">
+            <summary>
+            Displays an "int"-value in the Console                                                                        <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "int" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "int"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Warning_SDF(System.UInt32,System.Object[])">
+            <summary>
+            Displays a "uint"-value in the Console                                                                        <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "uint" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "uint"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Warning_SDF(System.Int64,System.Object[])">
+            <summary>
+            Displays a "long"-value in the Console                                                                        <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "long" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "long"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Warning_SDF(System.UInt64,System.Object[])">
+            <summary>
+            Displays a "ulong"-value in the Console                                                                       <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "ulong" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "ulong"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Warning_SDF(System.Decimal,System.Object[])">
+            <summary>
+            Displays a "decimal"-value in the Console                                                                     <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "decimal" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "decimal"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Warning_SDF(System.Single,System.Object[])">
+            <summary>
+            Displays a "float"-value in the Console                                                                       <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "float" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "float"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Warning_SDF(System.Double,System.Object[])">
+            <summary>
+            Displays a "double"-value in the Console                                                                      <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "double" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "double"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Warning_SDF(System.Char,System.Object[])">
+            <summary>
+            Displays a "char"-value in the Console                                                                        <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "char" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "char"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Warning_SDF(UnityEngine.Color,System.Object[])">
+            <summary>
+            Displays a "Color"-value in the Console                                                                       <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "Color" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "Color"</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Warning_SDF(UnityEngine.Color32,System.Object[])">
+            <summary>
+            Displays a "Color32"-value in the Console                                                                     <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "Color32" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "Color32"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Warning_SDF``1(``0,System.Boolean)">
+            <summary>
+            Displays an "object" in the Console
+            </summary>
+            <param name="_Message">The "object" to display</param>
+            <param name="_DontFormat">True = Displays this Message without any formatting</param>
+            <returns>Returns the "object"</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Warning_SDF``1(``0,System.Object[])">
+            <summary>
+            Displays multiple Objects with different formatting in the Console                                            <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "object" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "object"</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Error_SDF(System.Byte,System.Object[])">
+            <summary>
+            Displays a "byte"-value in the Console                                                                        <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "byte" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "byte"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Error_SDF(System.SByte,System.Object[])">
+            <summary>
+            Displays an "sbyte"-value in the Console                                                                      <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "sbyte" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "sbyte"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Error_SDF(System.Int16,System.Object[])">
+            <summary>
+            Displays a "short"-value in the Console                                                                       <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "short" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "short"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Error_SDF(System.UInt16,System.Object[])">
+            <summary>
+            Displays a "ushort"-value in the Console                                                                      <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "ushort" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "ushort"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Error_SDF(System.Int32,System.Object[])">
+            <summary>
+            Displays an "int"-value in the Console                                                                        <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "int" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "int"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Error_SDF(System.UInt32,System.Object[])">
+            <summary>
+            Displays a "uint"-value in the Console                                                                        <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "uint" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "uint"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Error_SDF(System.Int64,System.Object[])">
+            <summary>
+            Displays a "long"-value in the Console                                                                        <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "long" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "long"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Error_SDF(System.UInt64,System.Object[])">
+            <summary>
+            Displays a "ulong"-value in the Console                                                                       <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "ulong" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "ulong"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Error_SDF(System.Decimal,System.Object[])">
+            <summary>
+            Displays a "decimal"-value in the Console                                                                     <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "decimal" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "decinmal"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Error_SDF(System.Single,System.Object[])">
+            <summary>
+            Displays a "float"-value in the Console                                                                       <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "float" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "float"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Error_SDF(System.Double,System.Object[])">
+            <summary>
+            Displays a "double"-value in the Console                                                                      <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "double" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "double"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Error_SDF(System.Char,System.Object[])">
+            <summary>
+            Displays a "char"-value in the Console                                                                        <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "char" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "char"-value</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Error_SDF(UnityEngine.Color,System.Object[])">
+            <summary>
+            Displays a "Color"-value in the Console                                                                       <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "Color" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "Color"</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Error_SDF(UnityEngine.Color32,System.Object[])">
+            <summary>
+            Displays a "Color32"-value in the Console                                                                     <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "Color32" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "Color32"</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Error_SDF``1(``0,System.Boolean)">
+            <summary>
+            Displays an "object" in the Console
+            </summary>
+            <param name="_Message">The "object" to display</param>
+            <param name="_DontFormat">True = Displays this Message without any formatting</param>
+            <returns>Returns the "object"</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Error_SDF``1(``0,System.Object[])">
+            <summary>
+            Displays multiple Objects with different formatting in the Console                                            <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "object" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns the "object"</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Exception_SDF(System.Byte,System.Object[])">
+            <summary>
+            Displays a "byte"-value in the Console                                                                        <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "byte" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns an "Exception"</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Exception_SDF(System.SByte,System.Object[])">
+            <summary>
+            Displays an "sbyte"-value in the Console                                                                      <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "sbyte" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns an "Exception"</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Exception_SDF(System.Int16,System.Object[])">
+            <summary>
+            Displays a "short"-value in the Console                                                                       <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "short" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns an "Exception"</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Exception_SDF(System.UInt16,System.Object[])">
+            <summary>
+            Displays a "ushort"-value in the Console                                                                      <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "ushort" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns an "Exception"</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Exception_SDF(System.Int32,System.Object[])">
+            <summary>
+            Displays an "int"-value in the Console                                                                        <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "int" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns an "Exception"</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Exception_SDF(System.UInt32,System.Object[])">
+            <summary>
+            Displays a "uint"-value in the Console                                                                        <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "uint" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns an "Exception"</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Exception_SDF(System.Int64,System.Object[])">
+            <summary>
+            Displays a "long"-value in the Console                                                                        <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "long" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns an "Exception"</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Exception_SDF(System.UInt64,System.Object[])">
+            <summary>
+            Displays a "ulong"-value in the Console                                                                       <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "ulong" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns an "Exception"</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Exception_SDF(System.Decimal,System.Object[])">
+            <summary>
+            Displays a "decimal"-value in the Console                                                                     <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "decimal" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns an "Exception"</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Exception_SDF(System.Single,System.Object[])">
+            <summary>
+            Displays a "float"-value in the Console                                                                       <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "float" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns an "Exception"</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Exception_SDF(System.Double,System.Object[])">
+            <summary>
+            Displays a "double"-value in the Console                                                                      <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "double" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns an "Exception"</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Exception_SDF(System.Char,System.Object[])">
+            <summary>
+            Displays a "char"-value in the Console                                                                        <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "char" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns an "Exception"</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Exception_SDF(UnityEngine.Color,System.Object[])">
+            <summary>
+            Displays a "Color"-value in the Console                                                                       <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "Color" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns an "Exception"</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Exception_SDF(UnityEngine.Color32,System.Object[])">
+            <summary>
+            Displays a "Color32"-value in the Console                                                                     <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "Color32" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns an "Exception"</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Exception_SDF(System.Object,System.Boolean)">
+            <summary>
+            Displays an "object" in the Console
+            </summary>
+            <param name="_Message">The "object" to display</param>
+            <param name="_DontFormat">True = Displays this Message without any formatting</param>
+            <returns>Returns an "Exception"</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Exception_SDF(System.Exception,System.Exception,System.Boolean)">
+            <summary>
+            Displays an "Exception" in the Console
+            </summary>
+            <param name="_Exception">The "Exception" to display</param>
+            <param name="_InnerException">The "InnerException" to display</param>
+            <param name="_DontFormat">True = Displays this Message without any formatting</param>
+            <returns>Returns an "Exception"</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.Exception_SDF(System.Object,System.Object[])">
+            <summary>
+            Displays multiple Objects with different formatting in the Console                                            <br/>
+            <b>Color</b>:      <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>Color32</b>:    <i>(Unity Struct) will format the messages color.</i>                                      <br/>
+            <b>C (Color)</b>:  <i>(Plugin Enum) will format the messages color.</i>                                       <br/>
+            <b>F (Format)</b>: <i>(Plugin Enum) will format the messages Text style.</i>                                  <br/>
+            <b>P (Preset)</b>: <i>(Plugin Enum) will format the message with the values set in the ScriptableObject.</i>  <br/>
+            <b>Number</b>:     <i>Numbers will format the messages size.</i>                                              <br/>
+            <b>object</b>:     <i>Objects will be concatenated together via ToString().</i>                               <br/>
+            </summary>
+            <param name="_Message">The "object" to display</param>
+            <param name="_Messages">Message and Format arguments</param>
+            <returns>Returns an "Exception"</returns>
+        </member>
+        <member name="M:SimpleDebugFormatting.DExtension.InsertAtZero(System.Object,System.Object[])">
+            <summary>
+            Inserts the passed Object into the passed Array at index 0
+            </summary>
+            <param name="_Object">The object to insert into the Array</param>
+            <param name="_Array">The Array to insert the object to</param>
+            <returns>Returns the passed Array with the inserted object at index 0</returns>
+        </member>
+    </members>
+</doc>

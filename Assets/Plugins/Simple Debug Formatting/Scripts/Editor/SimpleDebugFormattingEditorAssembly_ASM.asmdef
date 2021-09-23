@@ -1,0 +1,18 @@
+{
+    "name": "SimpleDebugFormattingEditorAssembly_ASM",
+    "rootNamespace": "SimpleDebugFormatting",
+    "references": [
+        "GUID:468b7d3682efc784d9200282f8d51ab9"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
